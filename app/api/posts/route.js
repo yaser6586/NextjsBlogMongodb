@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import clientPromise from "@/lib/mongodb";
+import { ObjectId } from "mongodb";
 
 export async function GET(request) {
   // return NextResponse.json(data);
@@ -20,4 +21,14 @@ export async function POST(request) {
   let myPost = await db.collection("posts").insertOne(newPost);
 
   return NextResponse.json(myPost);
+}
+export async function DELETE(request) {
+  const { id } = await request.json();
+
+  const client = await clientPromise;
+  const db = client.db("blog");
+  const delPosts = await db
+    .collection("posts")
+    .deleteOne({ _id: new ObjectId(id) });
+  return NextResponse.json(id);
 }

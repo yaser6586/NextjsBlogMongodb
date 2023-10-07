@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 function Post({ posts }) {
-  const postId = posts.id;
-  const id = posts.toString();
   return (
     <div className="flex justify-center">
       <div className="w-1/2">

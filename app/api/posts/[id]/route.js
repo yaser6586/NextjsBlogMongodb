@@ -3,15 +3,15 @@ import { NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 import clientPromise from "@/lib/mongodb";
 
-export async function generateStaticParams() {
-  const posts = await fetch("http://localhost:3000/api/posts").then((res) =>
-    res.json()
-  );
+// export async function generateStaticParams() {
+//   const posts = await fetch("http://localhost:3000/api/posts").then((res) =>
+//     res.json()
+//   );
 
-  return posts.map((post) => ({
-    id: post._id,
-  }));
-}
+//   return posts.map((post) => ({
+//     id: post._id,
+//   }));
+// }
 export async function GET(request, { params }) {
   //
 
