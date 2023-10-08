@@ -11,13 +11,11 @@ export async function getPost() {
 
 export default async function Home() {
   //for access to json json file we should use async await
-
-  const PostData = await getPost();
-
+  const posts = await getPost();
   return (
     <>
       <div>
-        {PostData.map((post) => (
+        {posts.map((post) => (
           <Post posts={post} />
         ))}
       </div>
