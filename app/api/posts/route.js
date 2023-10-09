@@ -22,13 +22,13 @@ export async function POST(request) {
 
   return NextResponse.json(myPost);
 }
-export async function DELETE(request) {
-  const { id } = await request.json();
+// export async function DELETE(request) {
+//   const { id } = await request.json();
 
-  const client = await clientPromise;
-  const db = client.db("blog");
-  const delPosts = await db
-    .collection("posts")
-    .deleteOne({ _id: new ObjectId(id) });
-  return NextResponse.json(id);
-}
+//   const client = await clientPromise;
+//   const db = client.db("blog");
+//   const delPosts = await db
+//     .collection("posts")
+//     .deleteOne({ _id: new ObjectId(id) });
+//   return NextResponse.json(id);
+// }

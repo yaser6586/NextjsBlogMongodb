@@ -1,5 +1,6 @@
 import DeletePost from "@/app/component/DeletePost";
 import Link from "next/link";
+import { API_URL } from "@/config/config";
 // export async function generateStaticParams() {
 //   const posts = await fetch("http://localhost:3000/api/posts").then((res) =>
 //     res.json()
@@ -11,7 +12,7 @@ import Link from "next/link";
 // }
 
 export async function getPost(id) {
-  const res = await fetch("http://localhost:3000/api/posts/" + id, {
+  const res = await fetch(`${API_URL}/api/posts/` + id, {
     cache: "no-store",
   });
   const post = res.json();

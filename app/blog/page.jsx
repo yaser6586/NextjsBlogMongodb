@@ -1,6 +1,7 @@
 "use client";
 import { redirect } from "next/navigation";
 import React, { useState } from "react";
+import { API_URL } from "@/config/config";
 
 function BlogPage() {
   const [title, setTitle] = useState("");
@@ -8,7 +9,7 @@ function BlogPage() {
   const [submitted, setSubmitted] = useState(false);
   async function handleClick() {
     if (body.length !== 0 && title.length !== 0) {
-      fetch("http://localhost:3000/api/posts", {
+      fetch(`${API_URL}/api/posts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
