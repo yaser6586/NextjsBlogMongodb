@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { redirect } from "next/navigation";
+import { API_URL } from "@/config/config";
 
 function DeletePost({ postId }) {
   const [deleted, setDeleted] = useState(false);
@@ -9,7 +10,7 @@ function DeletePost({ postId }) {
     redirect("/");
   }
   function handleDelete() {
-    fetch("http://localhost:3000/api/deletePosts/" + postId, {
+    fetch(`${API_URL}/api/deletePosts/` + postId, {
       method: "DELETE",
     });
 

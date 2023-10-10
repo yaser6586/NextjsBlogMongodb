@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { useState } from "react";
+import { API_URL } from "@/config/config";
 
 function EditPost({ posts, params }) {
   const [title, setTitle] = useState(posts.title);
@@ -12,7 +13,7 @@ function EditPost({ posts, params }) {
   }
   async function handleUpdate() {
     if (body.length !== 0 && title.length !== 0) {
-      fetch("http://localhost:3000/api/editPosts/" + params.id, {
+      fetch(`${API_URL}/api/editPosts/` + params.id, {
         method: "PATCH",
         headers: {
           "Content-type": "application/json; charset=UTF-8",

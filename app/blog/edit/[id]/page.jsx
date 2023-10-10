@@ -1,8 +1,9 @@
 import React from "react";
 import EditPost from "@/app/component/EditPost";
+import { API_URL } from "@/config/config";
 
 export async function getPost(id) {
-  const res = await fetch("http://localhost:3000/api/posts/" + id, {
+  const res = await fetch(`${API_URL}/api/posts/` + id, {
     cache: "no-store",
   });
   const post = res.json();
