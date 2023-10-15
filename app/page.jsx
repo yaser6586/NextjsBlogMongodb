@@ -1,4 +1,4 @@
-import Post from "./component/Post";
+import Post from "@/app/component/Post";
 import { API_URL } from "@/config/config";
 
 export async function getPost() {

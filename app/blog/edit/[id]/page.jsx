@@ -1,6 +1,6 @@
 import React from "react";
-import EditPost from "@/app/component/EditPost";
 import { API_URL } from "@/config/config";
+import EditPost from "@/app/component/EditPost";
 
 export async function getPost(id) {
   const res = await fetch(`${API_URL}/api/posts/` + id, {
